@@ -37,8 +37,8 @@ const returnEmoji = (choice) => {
 }
 
 const resetGame = () => {
-    scoreMessage.textContent = "Click to choose";
-    scoreInfo.textContent = "First to score 5 points wins";
+    scoreInfo.textContent = "Click to choose";
+    scoreMessage.textContent = "First to score 5 points wins";
     player = 0;
     computer = 0;
     playerSign.textContent = "❔";

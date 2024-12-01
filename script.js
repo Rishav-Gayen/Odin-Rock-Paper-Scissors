@@ -37,6 +37,7 @@ const returnEmoji = (choice) => {
 }
 
 const resetGame = () => {
+    scoreMessage.textContent = "Click to choose";
     player = 0;
     computer = 0;
     playerSign.textContent = "❔";

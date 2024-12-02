@@ -78,6 +78,15 @@ buttons.forEach((button) => {
             player++;
             playerScore.textContent = `Player: ${player}`;
         }
+
+        // Check winner
+
+        if (player === 5 || computer === 5) {
+            scoreMessage.textContent = player === 5 ? "Congratulations! You won the game!" : "Oh no! The computer won the game!";
+            setTimeout(() => {
+                resetGame();
+            }, 3000); // Delay of 3 seconds before reset
+        }
     })
 })
 

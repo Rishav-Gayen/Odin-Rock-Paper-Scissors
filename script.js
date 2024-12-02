@@ -49,6 +49,11 @@ const resetGame = () => {
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
+        if (player === 5 || computer === 5) {
+            // Game has ended, do not process further clicks
+            return;
+        }
+
         const computerChoice = getComputerChoice();
         computerSign.textContent = computerChoice;
         scoreInfo.textContent = button.id;
@@ -82,12 +87,11 @@ buttons.forEach((button) => {
         // Check winner
 
         if (player === 5 || computer === 5) {
+            scoreInfo.textContent = "Game Over";
             scoreMessage.textContent = player === 5 ? "Congratulations! You won the game!" : "Oh no! The computer won the game!";
 
-            button.disabled = true;
             setTimeout(() => {
                 resetGame();
-                button.disabled = false;
             }, 3000); // Delay of 3 seconds before reset
         }
     })
